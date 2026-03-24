@@ -1,98 +1,69 @@
-# My Dapp
+# 🛡️ VeriGate
 
-A Web3 application - composed with [N]skills
+<p align="center">
+  <strong>The Decentralized Web3 Access Protocol</strong><br>
+  <em>Earn access through proof. Complete challenges, mint your credential, and unlock exclusive on-chain content.</em>
+</p>
 
-## 📁 Project Structure
+## 📖 Introduction
+Traditional gatekeeping relies on centralized databases and paywalls. VeriGate transforms this paradigm by introducing **proof-of-knowledge access control**. Users don't just log in; they prove their understanding of Web3 concepts to earn an on-chain NFT credential, which seamlessly unlocks premium decentralized applications.
 
+## 🚨 The Problem
+- **Meaningless Access Models:** Current Web3 access often relies purely on capital (buying NFTs/tokens).
+- **Lack of Education:** Users interact with protocols they don't understand, leading to loss of funds and poor security practices.
+- **Static User Experiences:** Many dApps feel lifeless, mimicking traditional Web2 forms rather than embracing dynamic, interactive paradigms.
+
+## 💡 The Solution
+VeriGate combines interactive education with on-chain credentials:
+1. **Learn & Prove:** Users complete an interactive, anti-cheat challenge.
+2. **Earn Credential:** Successful users mint a non-transferable `VeriGate NFT`.
+3. **Unlock Value:** The protocol verifies ownership and grants access to premium, gated content.
+
+## 🎯 Objectives
+- Implement a **secure, client-side challenge protocol** using cryptographic hashing (SHA-256) to prevent tampering.
+- Create a **premium, glassmorphism-driven UI/UX** that feels highly interactive, replacing standard forms with reactive panels.
+- Frictionlessly **integrate smart contract interactions** (minting, balance checks) via Ethers.js and Wagmi.
+
+## 🏗️ Architecture
+- **Frontend Framework:** Next.js 14 (App Router) + React
+- **Styling:** Tailwind CSS + Custom Animations & Glassmorphism Utilities
+- **Web3 Integration:** Wagmi (Wallet Connection) + Ethers.js (Contract Interaction)
+- **Smart Contract:** Custom ERC-721 Stylus Contract deployed on Arbitrum Sepolia
+- **Security:** In-browser cryptographic hashing (`ethers.keccak256`) for anti-cheat quiz evaluation.
+
+## 🚀 Step-by-Step Setup Guide
+
+### 1. Requirements
+- Node.js (v18+)
+- pnpm (recommended) or npm
+- MetaMask or another injected Web3 wallet
+
+### 2. Installation
+Clone the repository and install dependencies:
+```bash
+git clone https://github.com/ShafinNigamana/VeriGate.git
+cd VeriGate
+pnpm install
 ```
-my-dapp/
-├── apps/
-│   └── web/                    # Next.js frontend
-│       ├── src/
-│       ├── package.json
-│       └── ...
-├── contracts/                  # Rust/Stylus smart contracts
-│   ├── mycontract/            # Original contract (no caching)
-│   │   └── src/lib.rs
-│   └── cached-contract/       # Contract with is_cacheable helper
-│       └── src/lib.rs
-├── docs/                       # Documentation
-├── scripts/                     # Deploy scripts
-├── .gitignore
-└── README.md
+
+### 3. Environment Configuration
+Navigate to the web app directory and create an environment file:
+```bash
+cd apps/web
+cp .env.example .env
+```
+Ensure your `apps/web/.env` contains the required variable for your contract:
+```env
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xe2a8cd01354ecc63a8341a849e9b89f14ff9f08f
 ```
 
-## 🚀 Quick Start
+### 4. Running the Development Server
+Start the Next.js development server:
+```bash
+npm run dev
+# or pnpm dev
+```
+Open **http://localhost:3000** in your browser.
 
-### Prerequisites
-- Node.js 18+
-- npm, yarn, or pnpm
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone <your-repo-url>
-   cd my-dapp
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   pnpm install
-   ```
-
-3. **Set up environment variables:**
-   ```bash
-   cp .env.example .env
-   ```
-
-   Edit `.env` and configure:
-      - `PRIVATE_KEY`: Private key for deployment and transactions
-   - `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID`: WalletConnect Cloud project ID for wallet connections
-
-4. **Deploy contracts** (from repo root): `pnpm deploy:sepolia` or `pnpm deploy:mainnet`
-
-5. **Scripts (Windows):** Run `pnpm fix-scripts` or `dos2unix scripts/*.sh` if you see line-ending errors.
-
-## 🔗 Smart Contracts
-
-The `contracts/` folder contains Rust/Stylus smart contract source code. See `docs/` for deployment and integration guides.
-
-## 🛠 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `pnpm deploy:sepolia` | Deploy to Arbitrum Sepolia |
-| `pnpm deploy:mainnet` | Deploy to Arbitrum One |
-| `pnpm fix-scripts` | Fix CRLF line endings (Windows) |
-
-## 🌐 Supported Networks
-
-- Arbitrum Sepolia (Testnet)
-- Arbitrum One (Mainnet)
-- Superposition
-- Superposition Testnet
-
-## 📚 Tech Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Web3:** wagmi + viem
-- **Wallet Connection:** RainbowKit
-
-## 📖 Documentation
-
-See the `docs/` folder for:
-- Contract interaction guide
-- Deployment instructions
-- API reference
-
-## License
-
-MIT
-
----
-
-Generated with ❤️ by [[N]skills](https://www.nskills.xyz)
+## 🏁 Conclusion
+VeriGate sets a new standard for Web3 onboarding. By demanding proof-of-knowledge instead of mere capital, it fosters an educated, engaged community while utilizing Arbitrum's high-performance rollups to ensure minting and verification are fast and securely scaled.
