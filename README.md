@@ -67,3 +67,9 @@ Open **http://localhost:3000** in your browser.
 
 ## 🏁 Conclusion
 VeriGate sets a new standard for Web3 onboarding. By demanding proof-of-knowledge instead of mere capital, it fosters an educated, engaged community while utilizing Arbitrum's high-performance rollups to ensure minting and verification are fast and securely scaled.
+
+
+
+#LICENSE 
+
+MIT
