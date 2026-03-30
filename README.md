@@ -70,6 +70,6 @@ VeriGate sets a new standard for Web3 onboarding. By demanding proof-of-knowledg
 
 
 
-#LICENSE 
+## LICENSE
 
 MIT
